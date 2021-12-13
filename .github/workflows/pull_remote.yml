@@ -1,12 +1,14 @@
-name: Pull remote
+name: Pull remote vps
 on: push
-uses: appleboy/ssh-action@master
-with:
-  host: ${{ secrets.HOST }}
-  username: ${{ secrets.USERNAME }}
-  key: ${{ secrets.KEY }}
-  port: ${{ secrets.PORT }}
-  script: |
-    whoami
-    pwd
+jobs:
+- name: multiple commands
+  uses: appleboy/ssh-action@master
+  with:
+    host: ${{ secrets.HOST }}
+    username: ${{ secrets.USERNAME }}
+    key: ${{ secrets.KEY }}
+    port: ${{ secrets.PORT }}
+    script: |
+      whoami
+      pwd
 
