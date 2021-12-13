@@ -1,7 +1,6 @@
 name: remote ssh command
 on: [push]
 jobs:
-
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -12,6 +11,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY}}
+        passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
         script: | 
           whoami
